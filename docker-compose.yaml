@@ -1,0 +1,16 @@
+version: "1"
+services:
+  debian:
+    image: debian
+    stdin_open: true # docker run -i
+    # tty: true # docker run -t
+    # ports:
+    # - 27017:27017
+    # environment:
+    volumes:
+      - debian-data:/root #mapiranje izmedju lokacije na nasem racunaru i na dockeru
+    # entrypoint: ["/bin/bash"]
+volumes:
+  debian-data:
+    driver: local
+# entrypoint: ["php", "-d", "memory_limit=-1", "vendor/bin/phpunit"]
